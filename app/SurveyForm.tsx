@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import * as React from "react";
 import emailjs from "@emailjs/browser";
-import { VariantType, useSnackbar } from "notistack";
+import { useSnackbar } from "notistack";
 import {
   Card,
   CardContent,
