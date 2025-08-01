@@ -33,6 +33,7 @@ import {
   Grid3x3,
 } from "lucide-react";
 import { SurveyForm } from "./SurveyForm";
+import ProductsSection from "./Products";
 
 export default function SolarCompanyWebsite() {
   return (
@@ -86,7 +87,7 @@ export default function SolarCompanyWebsite() {
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-yellow-50 to-orange-50 py-20">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="grid sm:grid-cols-2 gap-20 items-center">
               <div>
                 <Badge className="mb-4 bg-yellow-100 text-yellow-800">
                   Clean Energy Solutions
@@ -130,10 +131,6 @@ export default function SolarCompanyWebsite() {
                     </div>
                     <div className="text-sm text-gray-600">Installations</div>
                   </div>
-                  {/* <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">10+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
-                </div> */}
                   <div className="text-center">
                     <div className="text-2xl font-bold text-gray-900">
                       Subsidy
@@ -148,7 +145,7 @@ export default function SolarCompanyWebsite() {
                   alt="Solar panels installation"
                   width={400}
                   height={300}
-                  className="rounded-lg shadow-xl"
+                  className="rounded-lg shadow-xl sm:h-2/3 sm:w-2/3 h-1/2 w-1/2 "
                 />
               </div>
             </div>
@@ -416,134 +413,7 @@ export default function SolarCompanyWebsite() {
         {/* Our Products */}
 
         <section id="services" className="py-20 bg-blue-200">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Our Products
-              </h2>
-              <p className="text-xl text-gray-600">
-                We have variety of different community product to give a best
-                working model
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-              <Card>
-                <CardHeader className="text-center">
-                  <Grid3x3 className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-                  <CardTitle>Panel</CardTitle>
-                </CardHeader>
-                <CardContent className="center">
-                  <ul
-                    className="space-y-2 text-sm text-gray-600 content-center
-"
-                  >
-                    <div className="flex gap-6">
-                      <img src="/waaree.png" alt="waaree" className="h-20" />
-                      <img src="/adani.png" alt="adani" className="h-20" />
-                    </div>
-                    <div className="flex gap-4">
-                      <img
-                        src="/rayzon.png"
-                        alt="rayzon.png"
-                        className="h-20"
-                      />
-                      <img
-                        src="/Gautam.png"
-                        alt="Gautam.png"
-                        className="h-20"
-                      />
-                    </div>
-                    <img
-                      src="/Servotec.png"
-                      alt="Servotec.png"
-                      className="h-20"
-                    />
-                    {/* <li>• Waree</li>
-
-                    <li>• Adani</li>
-                    <li>• Rayzon</li>
-                    <li>• Gautam</li>
-                    <li>• ServoTec</li> */}
-                    {/* <li>• 3D modeling & visualization</li> */}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader className="text-center">
-                  <BatteryFull className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-                  <CardTitle>Convertor</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <div className="flex gap-20">
-                      <img
-                        src="/polycab.png"
-                        alt="polycab.png"
-                        className="h-20 pl-6"
-                      />
-                      <img
-                        src="/Havells.png"
-                        alt="Havells.png"
-                        className="h-20"
-                      />
-                    </div>
-                    <div className="flex gap-4">
-                      <img
-                        src="/livguard.png"
-                        alt="livguard.png"
-                        className="h-20"
-                      />
-                      <img
-                        src="/sungrow.png"
-                        alt="sungrow.png"
-                        className="h-10"
-                      />
-                    </div>
-                    <img src="/mindra.png" alt="mindra.png" className="h-20" />
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader className="text-center">
-                  <Cable className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-                  <CardTitle>Wire</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <div className="flex gap-14">
-                      <img
-                        src="/polycab.png"
-                        alt="polycab.png"
-                        className="h-20"
-                      />
-                      <img src="/rr.png" alt="rr.png" className="h-20" />
-                    </div>
-                    <img src="/anchor.png" alt="anchor.png" className="h-20" />
-
-                    {/* <li>• Subsidy documentation</li> */}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* <Card>
-                <CardHeader className="text-center">
-                  <Shield className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-                  <CardTitle>Maintenance</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li>• Regular cleaning & inspection</li>
-                    <li>• Performance monitoring</li>
-
-                    <li>• 24/7 technical support</li>
-                  </ul>
-                </CardContent>
-              </Card> */}
-            </div>
-          </div>
+          <ProductsSection />
         </section>
 
         {/* Gallery */}
@@ -849,10 +719,10 @@ export default function SolarCompanyWebsite() {
                       <span>Neelusolarenergy@gmail.com</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <MapPin className="h-12 w-12 text-yellow-500" />
+                      <MapPin className="md:h-12 md:w-12 h-10 w-10 text-yellow-500" />
                       <span>
-                        First Floor, Above Sagar Gaire, Vidyasagar College,
-                        Awadhpuri Chauraha, Bhopal (M.P.)
+                        F-8 & F-9, First Floor, Above Sagar Gaire, Vidyasagar
+                        College, Awadhpuri Chauraha, Bhopal (M.P.)
                       </span>
                     </div>
                     <div className="flex items-center space-x-3">
