@@ -13,7 +13,7 @@ export default function SnackBar() {
 
   return (
     <React.Fragment>
-      <Button onClick={handleClickVariant("success")}>Show snackbar</Button>
+      {/* <Button onClick={handleClickVariant("success")}>Show snackbar</Button> */}
     </React.Fragment>
   );
 }

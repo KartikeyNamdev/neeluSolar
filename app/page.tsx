@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SnackbarProvider } from "notistack";
 import SnackBar from "./SnackBar";
@@ -140,7 +141,7 @@ export default function SolarCompanyWebsite() {
                 </div>
               </div>
               <div className="gap-10 items-end">
-                <img
+                <Image
                   src="/logo.jpeg"
                   alt="Solar panels installation"
                   width={400}
@@ -267,7 +268,7 @@ export default function SolarCompanyWebsite() {
                 </div>
               </div>
               <div>
-                <img
+                <Image
                   src="/whyweneed.jpg"
                   alt="Solar installation process"
                   width={500}
@@ -430,7 +431,7 @@ export default function SolarCompanyWebsite() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="relative group overflow-hidden rounded-lg">
-                <img
+                <Image
                   src="/panel2.jpg"
                   alt="Residential solar installation"
                   width={400}
@@ -445,7 +446,7 @@ export default function SolarCompanyWebsite() {
               </div>
 
               <div className="relative group overflow-hidden rounded-lg">
-                <img
+                <Image
                   src="/panel7.jpeg"
                   alt="Commercial solar installation"
                   width={400}
@@ -458,7 +459,7 @@ export default function SolarCompanyWebsite() {
               </div>
 
               <div className="relative group overflow-hidden rounded-lg">
-                <img
+                <Image
                   src="/convertor.jpg"
                   alt="Solar inverter installation"
                   width={400}
@@ -471,7 +472,7 @@ export default function SolarCompanyWebsite() {
               </div>
 
               <div className="relative group overflow-hidden rounded-lg">
-                <img
+                <Image
                   src="/panel8.jpeg"
                   alt="Solar maintenance"
                   width={400}
@@ -486,7 +487,7 @@ export default function SolarCompanyWebsite() {
               </div>
 
               <div className="relative group overflow-hidden rounded-lg">
-                <img
+                <Image
                   src="/str2.jpeg"
                   alt="Net meter installation"
                   width={400}
@@ -501,7 +502,7 @@ export default function SolarCompanyWebsite() {
               </div>
 
               <div className="relative group overflow-hidden rounded-lg">
-                <img
+                <Image
                   src="/str3.jpeg"
                   alt="Solar farm"
                   width={400}

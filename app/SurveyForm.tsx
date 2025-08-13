@@ -28,9 +28,9 @@ interface Form {
   firstname: string;
   lastname: string;
   email: string;
-  phoneNumber: number;
+  phoneNumber: string;
   address: string;
-  monthlyBill: number;
+  monthlyBill: string;
   type: string;
   questions: string;
 }
@@ -40,9 +40,9 @@ export const SurveyForm = () => {
     firstname: "",
     lastname: "",
     email: "",
-    phoneNumber: 0,
+    phoneNumber: "",
     address: "",
-    monthlyBill: 0,
+    monthlyBill: "",
     type: "",
     questions: "",
   });
@@ -50,15 +50,38 @@ export const SurveyForm = () => {
   const { enqueueSnackbar } = useSnackbar();
 
   const handleSubmit = async () => {
+    // --- Create an object with keys that match your EmailJS template ---
+    const templateParams = {
+      // Template expects 'customer_name', your state has 'firstname' and 'lastname'
+      customer_name: `${formState.firstname} ${formState.lastname}`,
+
+      // Template expects 'customer_email', your state has 'email'
+      customer_email: formState.email,
+
+      // Template expects 'customer_phone', your state has 'phoneNumber'
+      customer_phone: formState.phoneNumber,
+
+      // Template expects 'customer_address', your state has 'address'
+      customer_address: formState.address,
+
+      // Template expects 'property_type', your state has 'type'
+      property_type: formState.type,
+
+      // Template expects 'monthly_bill', your state has 'monthlyBill'
+      monthly_bill: formState.monthlyBill,
+
+      // Template expects 'questions', your state has 'questions' (this one matches)
+      questions: formState.questions || "No additional questions.",
+
+      // You can also create new variables for things like the subject
+      subject: `New Survey Request from ${formState.firstname}`,
+    };
+
     try {
       await emailjs.send(
         EMAIL_CONFIG.emailjs.serviceId,
         EMAIL_CONFIG.emailjs.templateId,
-        {
-          ...formState,
-          from_name: `${formState.firstname} ${formState.lastname}`,
-          message: formState.questions,
-        },
+        templateParams, // --- Pass the correctly structured object here ---
         EMAIL_CONFIG.emailjs.userId
       );
       enqueueSnackbar("Survey Form Submitted!", { variant: "success" });
@@ -114,7 +137,7 @@ export const SurveyForm = () => {
           onChange={(e) =>
             setFormState((prev) => ({
               ...prev,
-              phoneNumber: Number(e.target.value),
+              phoneNumber: e.target.value,
             }))
           }
         />
@@ -135,7 +158,7 @@ export const SurveyForm = () => {
             onChange={(e) =>
               setFormState((prev) => ({
                 ...prev,
-                monthlyBill: Number(e.target.value),
+                monthlyBill: e.target.value,
               }))
             }
           />

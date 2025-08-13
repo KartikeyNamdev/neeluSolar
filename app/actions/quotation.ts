@@ -1,7 +1,7 @@
 import { EMAIL_CONFIG } from "@/lib/email-config";
 import emailjs from "@emailjs/browser";
 // import { useRouter } from "next/navigation";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 interface Form {
   firstname: string;
   lastname: string;
